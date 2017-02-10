@@ -1,0 +1,38 @@
+<view class="section">
+  <!--range-key只能数组对象中的那个字段作为key-->
+  <picker bindchange="bindPickerChange" range="{{array}}" range-key="com">
+    <view class="picker">
+    <view  class="weui-cell weui-cell_vcode">
+    <view class="weui-cell__hd">
+      <view class="weui-label">当前选择：</view>
+    </view>
+    <view class="weui-cell__bd">
+    <!--选择数组里面的第几个元素，选择以后更新value的值，改变选中状态-->
+    {{array[value].com}}
+    </view>
+    </view>
+    <!--value为0，默认选择第一条数据-->
+      
+    </view>
+  </picker>
+</view>
+
+<view class="weui-cell weui-cell_vcode">
+    <view class="weui-cell__hd">
+      <view class="weui-label">快递单号</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input type="number" bindinput="numHandel" placeholder="请输入快递编号"/>
+    </view>
+</view>
+<view style="margin: 10px"> 
+  <button  bindtap="searchHandel">查询</button>
+</view>
+<view class="padding">{{message}}</view>
+<view>
+  <view class="padding" style="text-align: left;" wx:for="{{info}}" wx:key="kd">
+    <view style="color: #468dcc">{{item.remark}} {{item.datatime}}</view>
+  </view>
+</view>
+
+
